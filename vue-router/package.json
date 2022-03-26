@@ -35,12 +35,16 @@
     },
     "rules": {}
   },
-  "vue/multi-word-component-names": ["error", {
-    "ignores": ["Signup", "Login"]
-  }
-],
-
-"browserslist": [
+  "vue/multi-word-component-names": [
+    "error",
+    {
+      "ignores": [
+        "Signup",
+        "Login"
+      ]
+    }
+  ],
+  "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead",
