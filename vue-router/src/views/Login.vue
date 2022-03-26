@@ -15,7 +15,7 @@
 <script>
 import { ref } from 'vue'
 export default {
-  name: 'Login',
+  name: 'Log-in',
   setup() {
     const email = ref('')
     const password = ref('')

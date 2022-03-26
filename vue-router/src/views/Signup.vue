@@ -16,7 +16,7 @@
 import { ref } from 'vue'
 import { useStore } from 'vuex'
 export default {
-  name: 'Signup',
+  name: 'Sign-up',
   setup() {
     const email = ref('')
     const password = ref('')
