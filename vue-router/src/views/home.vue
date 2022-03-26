@@ -19,7 +19,7 @@ export default {
     const store = useStore()
     
     console.log(store.state.user)
-    store.commit('setUser', 'yoshi')
+   
     return { 
       blogs
     }
