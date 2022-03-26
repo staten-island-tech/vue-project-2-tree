@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <h3>Login</h3>
+    <h3>Sign up</h3>
 
     <label for="email">Email:</label>
     <input type="email" name="email" v-model="email" required>
@@ -8,19 +8,21 @@
     <label for="email">Password:</label>
     <input type="password" name="password" v-model="password" required>
 
-    <button>Login</button>
+    <button>Sign up</button>
   </form>
 </template>
 
 <script>
 import { ref } from 'vue'
+import { useStore } from 'vuex'
 export default {
-  name: 'Log-in',
+  name: 'SignupView',
   setup() {
     const email = ref('')
     const password = ref('')
+    const store = useStore()
     const handleSubmit = () => {
-      console.log(email.value, password.value)
+      store.dispatch('signup', { email: email.value, password: password.value })
     }
     return { handleSubmit, email, password }
   }
