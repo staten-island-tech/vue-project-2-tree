@@ -2,7 +2,8 @@
 <div class="SignUp">
   <div class="rectangle-1">
   <form @submit.prevent="handleSubmit">
-    <h3>Sign up</h3>
+    <div class= "SignIn">Sign Up</div>
+    <div class ="make-new">Make a new account</div>
 
     <label for="email">Email:</label>
     <input type="email" name="email" v-model="email" required>
@@ -71,4 +72,6 @@ body {
  background: #232B2B;
  box-shadow: 6px 0px 12px rgba(0, 0, 0, 0.12);
 }
+
+
 </style>
