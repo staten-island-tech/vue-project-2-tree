@@ -1,4 +1,6 @@
 <template>
+<div class="SignUp">
+  <div class="rectangle-1">
   <form @submit.prevent="handleSubmit">
     <h3>Sign up</h3>
 
@@ -11,6 +13,10 @@
     <button>Sign up</button>
     <div v-if="error">{{ error }}</div>
   </form>
+</div>
+</div>
+
+
 </template>
 
 <script>
@@ -41,3 +47,28 @@ export default {
   }
 }
 </script>
+
+<style>
+body {
+  background: #292929;
+}
+.rectangle-1 {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 25%;
+  margin: auto;
+  margin-top: 10rem;
+  height: 68.8rem;
+  left: 43.8rem;
+  top: 16.8rem;
+  padding: 1rem;
+  border-radius: 3rem;
+  margin-left: 72rem;
+  font-size: 5rem;
+  overflow: hidden;
+  padding: 3rem;
+ background: #232B2B;
+ box-shadow: 6px 0px 12px rgba(0, 0, 0, 0.12);
+}
+</style>
