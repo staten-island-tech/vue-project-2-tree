@@ -5,16 +5,21 @@
     <div class= "SignIn">Sign Up</div>
     <div class ="make-new">Make a new account</div>
 
-    <label for="email">Email:</label>
-    <input type="email" name="email" v-model="email" required>
+    
+    <input type="email" name="email" placeholder="Email" id="email" v-model="email" required>
 
-    <label for="email">Password:</label>
-    <input type="password" name="password" v-model="password" required>
+ 
+    <input type="password" name="password" placeholder="Password" id="password" v-model="password" required>
 
-    <button>Sign up</button>
+    <button class= "Signy">Sign Up</button>
+    <div class= "Already">Already have an account?</div>
+    <button class= "Loggy">Login</button>
     <div v-if="error">{{ error }}</div>
+    
+    
   </form>
 </div>
+<div class="rectangle-2"></div>
 </div>
 
 
@@ -53,25 +58,7 @@ export default {
 body {
   background: #292929;
 }
-.rectangle-1 {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  width: 25%;
-  margin: auto;
-  margin-top: 10rem;
-  height: 68.8rem;
-  left: 43.8rem;
-  top: 16.8rem;
-  padding: 1rem;
-  border-radius: 3rem;
-  margin-left: 72rem;
-  font-size: 5rem;
-  overflow: hidden;
-  padding: 3rem;
- background: #232B2B;
- box-shadow: 6px 0px 12px rgba(0, 0, 0, 0.12);
-}
+
 
 
 </style>

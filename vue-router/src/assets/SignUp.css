@@ -12,12 +12,92 @@
 }
 .make-new {
   font-family: "Roboto";
-  padding-top: 3rem;
-  margin-bottom: 25rem;
+  padding-top: 2rem;
+  margin-bottom: 22rem;
   font-style: normal;
   font-weight: 400;
   font-size: 2.4rem;
   text-align: center;
 
   color: #ffffff;
+}
+
+.rectangle-1 {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 25%;
+  margin: auto;
+  margin-top: 10rem;
+  height: 68.8rem;
+  left: 43.8rem;
+  top: 16.8rem;
+  padding: 1rem;
+  margin-left: 72rem;
+  font-size: 5rem;
+  overflow: hidden;
+  padding: 3rem;
+  background: #232b2b;
+  box-shadow: 6px 0px 12px rgba(0, 0, 0, 0.12);
+}
+
+#email {
+  position: relative;
+  width: 40rem;
+  height: 7rem;
+  bottom: 18rem;
+  background: #ffffff;
+}
+
+#password {
+  position: relative;
+  width: 40rem;
+  height: 7rem;
+  bottom: 16rem;
+  background: #ffffff;
+}
+
+.Signy {
+  position: relative;
+  width: 40rem;
+  height: 7rem;
+  bottom: 16rem;
+  left: 0.9rem;
+  background: #1db954;
+  text-align: center;
+  font-family: "Roboto";
+  font-style: normal;
+}
+
+.Already {
+  position: relative;
+  font-family: "Roboto";
+  bottom: 7rem;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.4rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.Loggy {
+  position: relative;
+  background: #ffffff;
+  text-align: center;
+  font-family: "Roboto";
+  font-style: normal;
+  bottom: 7rem;
+  width: 40rem;
+  height: 7rem;
+  left: 0.9rem;
+  color: #1db954;
+}
+.rectangle-2 {
+  position: absolute;
+  background: #1db954;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.12);
+  width: 56.4rem;
+  height: 68.8rem;
+  left: 50rem;
+  top: 22rem;
 }
