@@ -45,7 +45,22 @@ button {
   color: #fff;
   cursor: pointer;
 }
+.homenav {
+  font-size: 2rem;
+  color: #1db954;
+  position: relative;
+  left: 150rem;
+}
 
+.aboutnav {
+  font-size: 2rem;
+  color: #1db954;
+}
+
+.signupnav {
+  font-size: 2rem;
+  color: #1db954;
+}
 /* blogs */
 .blog {
   padding: 1rem;
