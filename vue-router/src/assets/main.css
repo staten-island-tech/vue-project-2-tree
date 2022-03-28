@@ -63,10 +63,10 @@ button {
   font-weight: bold;
   display: flex;
   align-items: center;
-  font-size: 0.9em;
+  font-size: 3rem;
 }
 .blog .icons .material-icons {
-  font-size: 1em;
+  font-size: 3rem;
   margin-left: 1rem;
   cursor: pointer;
 }
@@ -83,4 +83,7 @@ label {
 form button {
   display: block;
   margin-top: 2rem;
+}
+.blog {
+  font-size: 5rem;
 }
