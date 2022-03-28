@@ -1,7 +1,9 @@
+.SignUp {
+  font-family: "Sora", sans-serif;
+}
 .SignIn {
   /* Signup */
-  margin-top: 1rem;
-  font-family: "Roboto";
+  margin-top: 5rem;
   font-style: normal;
   font-weight: 700;
   font-size: 4.8rem;
@@ -11,7 +13,6 @@
   color: #ffffff;
 }
 .make-new {
-  font-family: "Roboto";
   padding-top: 2rem;
   margin-bottom: 22rem;
   font-style: normal;
@@ -47,6 +48,7 @@
   height: 7rem;
   bottom: 18rem;
   background: #ffffff;
+  font-family: "Sora", sans-serif;
 }
 
 #password {
@@ -55,6 +57,7 @@
   height: 7rem;
   bottom: 16rem;
   background: #ffffff;
+  font-family: "Sora", sans-serif;
 }
 
 .Signy {
@@ -65,14 +68,14 @@
   left: 0.9rem;
   background: #1db954;
   text-align: center;
-  font-family: "Roboto";
+  font-family: "Sora", sans-serif;
   font-style: normal;
 }
 
 .Already {
   position: relative;
-  font-family: "Roboto";
-  bottom: 7rem;
+
+  bottom: 11rem;
   font-style: normal;
   font-weight: 400;
   font-size: 2.4rem;
@@ -84,9 +87,9 @@
   position: relative;
   background: #ffffff;
   text-align: center;
-  font-family: "Roboto";
+  font-family: "Sora", sans-serif;
   font-style: normal;
-  bottom: 7rem;
+  bottom: 11rem;
   width: 40rem;
   height: 7rem;
   left: 0.9rem;

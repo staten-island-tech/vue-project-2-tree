@@ -2,10 +2,10 @@
   <form @submit.prevent="handleSubmit">
     <h3>Login</h3>
 
-    <label for="email">Email:</label>
+    <label for="email"> Email:</label>
     <input type="email" name="email" class= "email" id="email" v-model="email" required>
 
-    <label for="email">Password:</label>
+    <label for="email"> Password:</label>
     <input type="password" name="password" class= "password" v-model="password" required>
 
     <button>Login</button>

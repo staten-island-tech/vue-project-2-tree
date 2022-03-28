@@ -6,10 +6,10 @@
     <div class ="make-new">Make a new account</div>
 
     
-    <input type="email" name="email" placeholder="Email" id="email" v-model="email" required>
+    <input type="email" name="email" placeholder=" Email" id="email" v-model="email" required>
 
  
-    <input type="password" name="password" placeholder="Password" id="password" v-model="password" required>
+    <input type="password" name="password" placeholder=" Password" id="password" v-model="password" required>
 
     <button class= "Signy">Sign Up</button>
     <div class= "Already">Already have an account?</div>
@@ -19,7 +19,7 @@
     
   </form>
 </div>
-<div class="rectangle-2"></div>
+
 </div>
 
 
