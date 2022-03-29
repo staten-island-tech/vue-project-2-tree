@@ -1,16 +1,23 @@
 <template>
-  <form @submit.prevent="handleSubmit">
-    <h3>Login</h3>
+<div class= "LogUp">
+  <div class= "rectangle-1">
+        <form @submit.prevent="handleSubmit">
+    <div class ="SignIn">Login</div>
+    <div class= "make-new">Login to your account</div>
 
-    <label for="email">Email:</label>
-    <input type="email" name="email" v-model="email" required>
+    
+    <input type="email" name="email" placeholder= " Email" id="email" v-model="email" required>
 
-    <label for="password">Password:</label>
-    <input type="password" name="password" v-model="password" required>
+    
+    <input type="password" name="password" placeholder= " Password" id="password" v-model="password" required>
 
-    <button>Login</button>
+    <button class= "Loggy-2">Login</button>
     <div v-if="error">{{ error }}</div>
   </form>
+  </div>
+
+</div>
+
 </template>
 
 <script>

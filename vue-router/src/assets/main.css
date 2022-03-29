@@ -58,8 +58,17 @@ button {
 }
 
 .signupnav {
+  position: relative;
   font-size: 2rem;
   color: #1db954;
+  left: 152rem;
+}
+
+.loginnav {
+  position: relative;
+  font-size: 2rem;
+  color: #1db954;
+  left: 154rem;
 }
 /* blogs */
 .blog {

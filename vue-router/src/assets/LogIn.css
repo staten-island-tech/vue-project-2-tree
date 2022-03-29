@@ -1,0 +1,94 @@
+.LogUp {
+  font-family: "Sora", sans-serif;
+}
+.SignIn {
+  /* Signup */
+  margin-top: 5rem;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4.8rem;
+  line-height: 5.6rem;
+  text-align: center;
+
+  color: #ffffff;
+}
+.make-new {
+  padding-top: 2rem;
+  margin-bottom: 22rem;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.4rem;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.rectangle-1 {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 25%;
+  margin: auto;
+  margin-top: 10rem;
+  height: 68.8rem;
+  left: 43.8rem;
+  top: 16.8rem;
+  padding: 1rem;
+  margin-left: 72rem;
+  font-size: 5rem;
+  overflow: hidden;
+  padding: 3rem;
+  background: #232b2b;
+  box-shadow: 6px 0px 12px rgba(0, 0, 0, 0.12);
+}
+
+#email {
+  position: relative;
+  width: 40rem;
+  height: 7rem;
+  bottom: 18rem;
+  background: #ffffff;
+  font-family: "Sora", sans-serif;
+}
+
+#password {
+  position: relative;
+  width: 40rem;
+  height: 7rem;
+  bottom: 16rem;
+  background: #ffffff;
+  font-family: "Sora", sans-serif;
+}
+
+.Already {
+  position: relative;
+
+  bottom: 11rem;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.4rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.rectangle-2 {
+  position: absolute;
+  background: #1db954;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.12);
+  width: 56.4rem;
+  height: 68.8rem;
+  left: 50rem;
+  top: 22rem;
+}
+
+.Loggy-2 {
+  position: relative;
+  width: 40rem;
+  height: 7rem;
+  bottom: 16rem;
+  left: 0.9rem;
+  background: #1db954;
+  text-align: center;
+  font-family: "Sora", sans-serif;
+  font-style: normal;
+}
