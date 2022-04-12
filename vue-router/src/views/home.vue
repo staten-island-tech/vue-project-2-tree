@@ -18,12 +18,8 @@
 // @ is an alias to /src
 import { ref } from 'vue'
 import { useStore } from 'vuex'
-import blogCard from "../components/BlogCard.vue"
 export default {
     name: 'HomeView',
-    components: {
-      blogCard
-    },
   setup() {
     const blogs = ref([
       { title: 'Why Coffee is Better than Tea', id: 1 },
