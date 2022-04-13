@@ -32,7 +32,7 @@ export default {
       event.preventDefault()
      addDoc(collection(db, "blog"), {
        title: this.blog.title,
-       content: this.blog.content
+       content: this.blog.content,
      })
     },
   }
