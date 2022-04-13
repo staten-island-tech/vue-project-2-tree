@@ -3,6 +3,7 @@
     <router-link class="homenav" to="/">Home</router-link> 
     <router-link class="signupnav" to="/SignupView">Sign Up</router-link>
     <router-link class="loginnav" to= "/LoginView">Login</router-link>
+    <router-link class="createnav" to="/CreatePost">Create Post</router-link>
   </nav>
   <router-view/>
 </template>

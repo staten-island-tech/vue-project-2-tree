@@ -1,0 +1,83 @@
+<template>
+  <div class="newRecipe">
+    <form @submit.prevent="onFormSubmit">
+      <div class="form-group">
+        <label class="title">Name of Song</label>
+        <input type="text" class="form-control" v-model="blog.title" required>
+      </div>
+      <div class="form-group">
+          <label class="song-description">Description of Song</label>
+        <input type="text" class="description-control" v-model="blog.content" required>
+      </div>
+      <div class="form-group">
+        <button class="btn">add post</button>
+      </div>
+    </form>
+  </div>
+</template>
+
+<script>
+import { db } from "../firebase/config.js";
+import { collection, addDoc } from "firebase/firestore";
+export default {
+  data() {
+    return {
+      blog: {
+ 
+      }
+    }
+  },
+  methods: {
+    onFormSubmit(event) {
+      event.preventDefault()
+     addDoc(collection(db, "blog"), {
+       title: this.blog.title,
+       content: this.blog.content
+     })
+    },
+  }
+};
+</script>
+
+<style scoped>
+.newRecipe {
+  background-color: #232b2b;
+  width: 40%;
+  margin: auto;
+  margin-top: 8rem;
+  padding: 2%;
+  border-radius: 2rem;
+  font-family: "Sora", sans-serif;
+  box-shadow: 6px 0px 12px rgba(0, 0, 0, 0.12);
+}
+
+.description-control {
+  box-sizing: border-box;
+  width: 80%;
+  height: 15rem;
+  font-size: 1.5rem;
+  font-family: "Sora", sans-serif;
+}
+
+.title {
+  font-size: 3.5rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+.form-control {
+  width: 30rem;
+  height: 4rem;
+  font-family: "Sora", sans-serif;
+  font-size: 3rem;
+}
+.btn {
+  margin-top: 1%;
+  margin-left: 90%;
+}
+.song-description {
+  padding-top: 2rem;
+  font-size: 3.5rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+</style>

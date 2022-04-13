@@ -49,7 +49,7 @@ button {
   font-size: 2rem;
   color: #1db954;
   position: relative;
-  left: 150rem;
+  left: 144rem;
 }
 
 .aboutnav {
@@ -61,15 +61,23 @@ button {
   position: relative;
   font-size: 2rem;
   color: #1db954;
-  left: 152rem;
+  left: 146rem;
 }
 
 .loginnav {
   position: relative;
   font-size: 2rem;
   color: #1db954;
-  left: 154rem;
+  left: 148rem;
 }
+
+.createnav {
+  position: relative;
+  font-size: 2rem;
+  color: #1db954;
+  left: 150rem;
+}
+
 /* blogs */
 .blog {
   padding: 1rem;

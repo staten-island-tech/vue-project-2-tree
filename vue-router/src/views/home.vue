@@ -16,23 +16,25 @@
 
 <script>
 // @ is an alias to /src
+/* eslint-disable */
 import { ref } from 'vue'
 import { useStore } from 'vuex'
+import { collection, getDocs } from "firebase/firestore";
 export default {
-    name: 'HomeView',
+  name: 'HomeView',
   setup() {
-    const blogs = ref([
-      { title: 'Why Coffee is Better than Tea', id: 1 },
-      { title: '...Then I Took an Arrow in the Knee', id: 2 },
-      { title: 'Mario vs Luigi, Ultimate Showdown', id: 3 },
-    ])
-    const store = useStore()
+      const blogs = ref([
+        { title: 'Why Coffee is Better than Tea', id: 1 },
+        { title: '...Then I Took an Arrow in the Knee', id: 2 },
+        { title: 'Mario vs Luigi, Ultimate Showdown', id: 3 },
+      ])
+      const store = useStore()
+      
+      console.log(store.state.user)
     
-    console.log(store.state.user)
-   
-    return { 
-      blogs
-    }
+      return { 
+        blogs
+      }
   }
 }
 
