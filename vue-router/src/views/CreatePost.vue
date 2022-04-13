@@ -10,7 +10,7 @@
         <input type="text" class="description-control" v-model="blog.content" required>
       </div>
       <div class="form-group">
-        <button class="btn">add post</button>
+        <button class="btn">Add Post</button>
       </div>
     </form>
   </div>
@@ -44,11 +44,12 @@ export default {
   background-color: #232b2b;
   width: 40%;
   margin: auto;
-  margin-top: 8rem;
+  margin-top: 15rem;
   padding: 2%;
   border-radius: 2rem;
   font-family: "Sora", sans-serif;
   box-shadow: 6px 0px 12px rgba(0, 0, 0, 0.12);
+  
 }
 
 .description-control {
@@ -65,17 +66,25 @@ export default {
   font-weight: 700;
 }
 .form-control {
-  width: 30rem;
+  width: 60%;
   height: 4rem;
   font-family: "Sora", sans-serif;
   font-size: 3rem;
 }
 .btn {
-  margin-top: 1%;
-  margin-left: 90%;
+  margin-top: 3rem;
+  margin-left: 17rem;
+  width: 50%;
+  height: 7rem;
+  font-size: 2.4rem;
+  background: #1db954;
+  text-align: center;
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+
 }
 .song-description {
-  padding-top: 2rem;
+  padding-top: 1rem;
   font-size: 3.5rem;
   color: #ffffff;
   font-weight: 700;
