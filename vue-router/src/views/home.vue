@@ -23,6 +23,22 @@ import { collection, getDocs } from "firebase/firestore";
 export default {
   name: 'HomeView',
   setup() {
+const docRef = doc(db, "cities", "SF");
+const docSnap = await getDoc(docRef);
+if (docSnap.exists()) {
+  console.log("Document data:", docSnap.data());
+} else {
+  // doc.data() will be undefined in this case
+  console.log("No such document!");
+}
+
+if (docSnap.exists()) {
+  console.log("Document data:", docSnap.data());
+} else {
+  // doc.data() will be undefined in this case
+  console.log("No such document!");
+}
+
       const blogs = ref([
         { title: 'Why Coffee is Better than Tea', id: 1 },
         { title: '...Then I Took an Arrow in the Knee', id: 2 },

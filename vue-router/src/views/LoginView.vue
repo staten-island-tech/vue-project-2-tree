@@ -2,8 +2,8 @@
 <div class= "LogUp">
   <div class= "rectangle-1">
         <form @submit.prevent="handleSubmit">
-    <div class ="SignIn">Login</div>
-    <div class= "make-new">Login to your account</div>
+    <h1 class ="SignIn">Login</h1>
+    <h2 class= "make-new">Login to your account</h2>
 
     
     <input type="email" name="email" placeholder= " Email" id="email" v-model="email" required>
