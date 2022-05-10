@@ -2,6 +2,8 @@
   <div class="newRecipe">
     <form @submit.prevent="onFormSubmit">
       <div class="form-group">
+        <label class="img-insert">Album Cover</label>
+        <button class="btn">Add Photo</button>
         <label class="title">Name of Song</label>
         <input type="text" class="form-control" v-model="blog.title" required>
       </div>
@@ -33,6 +35,7 @@ export default {
      addDoc(collection(db, "blog"), {
        title: this.blog.title,
        content: this.blog.content,
+       cover: this.blog.cover,
      })
     },
   }
@@ -60,8 +63,20 @@ export default {
   font-family: "Sora", sans-serif;
 }
 
+.img-control {
+  width: 60%;
+  height: 4rem;
+  font-family: "Sora", sans-serif;
+  font-size: 3rem;
+}
+
 .title {
   font-size: 3.5rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+.img-insert {
+    font-size: 3.5rem;
   color: #ffffff;
   font-weight: 700;
 }
