@@ -21,6 +21,7 @@ import { ref } from 'vue'
 import { useStore } from 'vuex'
 import { collection, getDocs } from "firebase/firestore";
 export default {
+  
   name: 'HomeView',
   setup() {
       const blogs = ref([
