@@ -26,6 +26,16 @@ const routes = [
     component: CreateView,
   },
   {
+    path: "/Log-In",
+    name: "Log In",
+    component: function () {
+      return import("../views/LoginView.vue");
+    },
+    meta: {
+      title: "Signup",
+    },
+  },
+  {
     path: "/about",
     name: "about",
     // route level code-splitting

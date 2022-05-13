@@ -85,15 +85,16 @@
 
 .Loggy {
   position: relative;
-  background: #ffffff;
+  background: #1db954;
   text-align: center;
   font-family: "Sora", sans-serif;
+  border-radius: 4rem;
   font-style: normal;
   bottom: 11rem;
-  width: 40rem;
+  width: 45rem;
   height: 7rem;
   left: 0.9rem;
-  color: #1db954;
+  color: #ffffff;
 }
 .rectangle-2 {
   position: absolute;

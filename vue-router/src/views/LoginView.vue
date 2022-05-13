@@ -1,7 +1,7 @@
 <template>
 <div class= "LogUp">
   <div class= "rectangle-1">
-        <form @submit.prevent="handleSubmit">
+    <form @submit.prevent="handleSubmit">
     <div class ="SignIn">Login</div>
     <div class= "make-new">Login to your account</div>
 
