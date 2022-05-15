@@ -36,10 +36,9 @@ export default {
        title: this.blog.title,
        content: this.blog.content,
        cover: this.blog.cover,
-
      })
     },
-  }
+  },
 };
 </script>
 
