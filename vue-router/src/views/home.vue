@@ -21,9 +21,17 @@
 import { ref } from 'vue'
 import { useStore } from 'vuex'
 import { collection, getDocs } from "firebase/firestore";
+import { getDatabase } from "firebase/database";
 export default {
   
   name: 'HomeView',
+  components: {
+    Card,
+  },
+  setup() {
+   
+    const songRef = ref(database, "blogs/");
+  },
 data() {
   return {
     selected: "",
