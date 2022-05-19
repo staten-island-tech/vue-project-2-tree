@@ -18,10 +18,9 @@
 <script>
 // @ is an alias to /src
 /* eslint-disable */
-import { ref } from 'vue'
 import { useStore } from 'vuex'
 import { collection, getDocs } from "firebase/firestore";
-import { getDatabase } from "firebase/database";
+import { getDatabase, ref, onValue } from "firebase/database";
 export default {
   
   name: 'HomeView',
@@ -31,6 +30,13 @@ export default {
   setup() {
    
     const songRef = ref(database, "blogs/");
+    const store = useStore()
+
+    onValue(songRef,(snapshot) => {
+      snapshot.forEach(function(childSnapshot){
+        
+      })
+    })
   },
 data() {
   return {
