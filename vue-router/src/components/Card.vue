@@ -7,9 +7,8 @@
     </template>
 
 <script>
-
 export default {
-  name: "Card",  
+  name: "UserCard",  
   props: {
     title:String,
     image:String,
