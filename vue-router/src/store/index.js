@@ -5,6 +5,8 @@ import { auth } from "../firebase/config";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 
 const store = createStore({
@@ -38,8 +40,18 @@ const store = createStore({
         throw new Error("could not complete login");
       }
     },
+    async logout(context) {
+      console.log("logout action");
+
+      await signOut(auth);
+      context.commit("setUser", null);
+    },
   },
 });
-
+const unsub = onAuthStateChanged(auth, (user) => {
+  store.commit("setAuthIsReady", true);
+  store.commit("setUser", user);
+  unsub();
+});
 // export the store
 export default store;

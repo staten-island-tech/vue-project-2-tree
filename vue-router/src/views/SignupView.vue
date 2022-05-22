@@ -2,8 +2,8 @@
 <div class="SignUp">
   <div class="rectangle-1">
   <form @submit.prevent="handleSubmit">
-    <div class= "SignIn">Sign Up</div>
-    <div class ="make-new">Make a new account</div>
+    <h1 class= "SignIn">Sign Up</h1>
+    <h2 class ="make-new">Make a new account</h2>
 
     
     <input type="email" name="email" placeholder=" Email" id="email" v-model="email" required>
@@ -12,7 +12,7 @@
     <input type="password" name="password" placeholder=" Password" id="password" v-model="password" required>
 
     <button class= "Signy">Sign Up</button>
-    <div class= "Already">Already have an account?</div>
+    <p class= "Already">Already have an account?</p>
     <button class= "Loggy">Login</button>
     <div v-if="error">{{ error }}</div>
     
