@@ -2,12 +2,12 @@
   <div class="home">
   <div v-for="blog in blogs" :key="blog.id">
        <Card 
-    v-for="item in items" 
+    v-for="(item,index) in items" 
     :key="item.name"
     :title="item.name"
     :price="item.price"
     :image="item.image"
-    :index="id"
+    :index="index"
     :add="carrt"
     >
   </Card>
@@ -35,18 +35,16 @@ data() {
         { title: 'Mario vs Luigi, Ultimate Showdown', id: 3 },
     ]
   }
-  return { 
-       blogs
-      }
 }
-
 }
     
       const store = useStore()
       
       console.log(store.state.user)
     
-      
+      return { 
+        blogs
+      }
   
 
 

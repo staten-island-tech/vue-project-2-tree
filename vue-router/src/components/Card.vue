@@ -12,6 +12,7 @@ export default {
   name: "Card",  
   props: {
     title:String,
+    category:String,
     image:String,
     },
   };
