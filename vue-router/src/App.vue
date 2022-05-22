@@ -60,7 +60,7 @@ nav a {
   position: relative;
   background-color: #1db954;
   font-size: 2rem;
-  left: 153rem;
+  left: 156rem;
 }
 .displayName {
   position: relative;
