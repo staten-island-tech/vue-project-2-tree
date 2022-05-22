@@ -5,7 +5,10 @@
     <router-link class="loginnav" to= "/LoginView">Login</router-link>
     <router-link class="createnav" to="/CreatePost">Create Post</router-link>
   </nav>
-  <router-view/>
+  <div>
+     <router-view/>
+  </div>
+ 
 </template>
 
 <style>
