@@ -2,11 +2,11 @@
   <div class="home">
   <div v-for="blog in blogs" :key="blog.id">
     <UserCard 
-    v-for="item in items" 
-    :key="item.name"
-    :title="item.name"
-    :price="item.price"
-    :image="item.image"
+    v-for="blog in blogs" 
+    :key="blog.name"
+    :title="blog.name"
+    :price="blog.price"
+    :image="blog.image"
     :index="id"
     >
   </UserCard>
@@ -36,9 +36,9 @@ export default {
         const childData = childSnapshot.exportVal();
         console.log(childData);
 
-         store.dispatch("getSongs", childData);
+         store.dispatch("getBlogs", childData);
        
-        
+        return { blogs: computed(() => store.state.blog), Card };
       })
     })
     const blogs = ref([
