@@ -2,8 +2,8 @@
   <div class="newRecipe">
     <form @submit.prevent="onFormSubmit">
       <div class="form-group">
-        <label class="img-insert">Album Cover</label>
-        <input id="file" class="form-control" type="file" v-on:change="onFileChange"/>
+        <label class="img-insert">Album Cover (link)</label>
+        <input id="file" class="form-control" type="link" v-on:change="onFileChange" v-model="blog.cover" required/>
         <label class="title">Name of Song</label>
         <input type="text" class="form-control" v-model="blog.title" required>
       </div>
