@@ -19,27 +19,51 @@
 </template>
 
 <script>
-import { db } from "../firebase/config.js";
-import { collection, addDoc } from "firebase/firestore";
+import { getDatabase, set, ref, push } from "firebase/database";
+// import { db } from "../firebase/config.js";
+// import { collection, addDoc } from "firebase/firestore";
+import { useRouter } from "vue-router";
 export default {
-  data() {
-    return {
-      blog: {
- 
+  setup() {
+    const cover = ``;
+    const title = ``;
+    const content = ``;
+    const db = getDatabase();
+    const route = useRouter();
+    
+    function writeUserData() {
+      if (
+        cover !== null &&
+        title !== null &&
+        content !== null 
+       ) {
+        const postlistRef = ref(db, "blogs/");
+        const newpostRef = push(postlistRef);
+
+        set(newpostRef, {
+          title: this.title,
+          content: this.content,
+
+        })
+        
+        route.push("/blog");
       }
     }
+    return {
+      cover, title, content, writeUserData
+    };
   },
-  methods: {
-    onFormSubmit(event) {
-      event.preventDefault()
-     addDoc(collection(db, "blog"), {
-       title: this.blog.title,
-       content: this.blog.content,
-       cover: this.blog.cover,
+  // methods: {
+  //   onFormSubmit(event) {
+  //     event.preventDefault()
+  //    addDoc(collection(db, "blog"), {
+  //      title: this.blog.title,
+  //      content: this.blog.content,
+  //      cover: this.blog.cover,
 
-     })
-    },
-  }
+  //    })
+  //   },
+  // }
 };
 </script>
 
