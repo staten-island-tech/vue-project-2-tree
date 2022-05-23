@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-  <div v-for="blog in blogs" :key="blog.id">
+    <Card/>
+<!--   <div v-for="blog in blogs" :key="blog.id">
       <div class="blog">
         <h3>{{ blog.title }}</h3>
         <p>{{ blog.content }}</p>
@@ -10,20 +11,47 @@
           <span class="material-icons">thumb_down</span>
         </div>
       </div>
-    </div>
+    </div> -->
+
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 /* eslint-disable */
-import { ref } from 'vue'
+import { getDatabase, ref, onValue } from "firebase/database"
 import { useStore } from 'vuex'
 import { collection, getDocs } from "firebase/firestore";
-import bColRef from "../firebase/config.js"
+import bColRef from "../firebase/config.js";
+import Card from "../components/UserCard.vue";
+import {onMounted, computed} from "vue"
+
 export default {
   name: 'HomeView',
-  data() {
+  components: {
+    Card
+  },
+    setup() {
+    const db = getDatabase();
+    const blogREf = ref(db, "recipe/");
+    const store = useStore();
+    let list = [];
+    onMounted(() => {
+      /* store.commit("clear"); */
+      onValue(blogREf, (snapshot) => {
+        snapshot.forEach(function (childSnapshot) {
+          const childData = childSnapshot.exportVal();
+          list.push(childData);
+          console.log(childData);
+
+          store.dispatch("getRecipe", childData);
+        });
+      });
+    });
+    console.log(list);
+    return { song: computed(() => store.state.song), Card, list };
+  },
+/*   data() {
     return {
       blogs: [],
     };
@@ -42,6 +70,6 @@ export default {
   created() {
     this.fetchBlogs();
   }
+} */
 }
-
 </script>

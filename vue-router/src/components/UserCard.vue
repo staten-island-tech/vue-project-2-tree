@@ -1,10 +1,13 @@
 <template>
-    <div class="carr">
-        <h2 class="title">{{ title }}</h2>
-        <img class="image" v-bind:src=image alt="image">
-        <router-link class="add-btn">View Post</router-link>
-    </div>
-    </template>
+  <button class="card" @click="goTo({ id })">
+    <h2 class="recipe-name">{{ title }}</h2>
+
+    <img class="recipe-img" :src="img" alt="" />
+    <p class="description">{{ text }}</p>
+    <!-- <p class="ingredient">{{ item }}</p>
+    <p class="instruction">{{ text }}</p> -->
+  </button>
+</template>
 
 <script>
 import { useRouter } from "vue-router";
@@ -27,10 +30,35 @@ export default {
         const data = snapshot.val();
         store.commit("view", data);
       });
-      router.push("/BlogView");
+      router.push("/BlogPost");
     }
     return { goTo };
   },
 };
 </script>
-
+<style scoped>
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: gray;
+  width: 18%;
+  height: 32rem;
+  border-radius: 2rem;
+  margin: 0.9%;
+  overflow: hidden;
+}
+.recipe-name {
+  font-size: 5rem;
+  margin: 0 auto;
+}
+.recipe-img {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+}
+.description {
+  margin: 0 auto;
+  font-size: 2rem;
+}
+</style>

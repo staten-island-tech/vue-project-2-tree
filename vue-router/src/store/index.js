@@ -12,17 +12,46 @@ import {
 const store = createStore({
   state: {
     user: null,
+    song: [],
   },
   mutations: {
     setUser(state, payload) {
       state.user = payload;
       console.log("user state changed:", state.user);
     },
+    recipeRef(state, payload) {
+      let isFound = state.song.some((e) => {
+        if (
+          e.id === payload.id /* &&
+          e.instructionsRecipe === payload.instructionsRecipe &&
+          e.img === payload.img &&
+          e.ingredientsRecipe === payload.ingredientsRecipe &&
+          e.descsRecipe === payload.descsRecipe */
+        ) {
+          return true;
+        }
+      });
+
+      if (isFound === false) {
+        state.song.push(payload);
+        /* if (isFound.id === payload.id) {
+          let index = state.recipe.indexOf(isFound);
+          state.recipe.splice(index, 1, payload);
+          console.log("yes");
+        }
+        if (isFound.id !== payload.id) {
+          console.log("no");
+          
+        } */
+      }
+
+      console.log(payload);
+      console.log("recipe in store", state.recipe);
+    },
   },
   actions: {
     async signup(context, { email, password }) {
       console.log("signup action");
-
       const res = await createUserWithEmailAndPassword(auth, email, password);
       if (res) {
         context.commit("setUser", res.user);
@@ -45,6 +74,11 @@ const store = createStore({
 
       await signOut(auth);
       context.commit("setUser", null);
+    },
+    async getRecipe(context, data) {
+      console.log("got recipe");
+
+      context.commit("recipeRef", data);
     },
   },
 });

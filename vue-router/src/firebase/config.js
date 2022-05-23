@@ -5,6 +5,7 @@ import { getAuth } from "firebase/auth";
 const firebaseConfig = {
   apiKey: "AIzaSyCnR_y2kkwqB-m-R-5hfRptxuU535lMc0k",
   authDomain: "fir-2-vuex-project.firebaseapp.com",
+  databaseURL: "https://fir-2-vuex-project-default-rtdb.firebaseio.com",
   projectId: "fir-2-vuex-project",
   storageBucket: "fir-2-vuex-project.appspot.com",
   messagingSenderId: "1072061725777",
