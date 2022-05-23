@@ -33,12 +33,12 @@ export default {
   },
     setup() {
     const db = getDatabase();
-    const blogREf = ref(db, "recipe/");
+    const blogRef = ref(db, "blogs/");
     const store = useStore();
     let list = [];
     onMounted(() => {
       /* store.commit("clear"); */
-      onValue(blogREf, (snapshot) => {
+      onValue(blogRef, (snapshot) => {
         snapshot.forEach(function (childSnapshot) {
           const childData = childSnapshot.exportVal();
           list.push(childData);

@@ -12,7 +12,7 @@
         <input type="text" class="description-control" v-model="content" required>
       </div>
       <div class="form-group">
-        <button class="btn">Add Post</button>
+        <button class="btn" @click="writeUserData">Add Post</button>
       </div>
     </form>
   </div>
