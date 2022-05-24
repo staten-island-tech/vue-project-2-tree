@@ -13,11 +13,15 @@ const store = createStore({
   state: {
     user: null,
     song: [],
+    imgPreview: null,
   },
   mutations: {
     setUser(state, payload) {
       state.user = payload;
       console.log("user state changed:", state.user);
+    },
+    setAuthIsReady(state, payload) {
+      state.authIsReady = payload;
     },
     recipeRef(state, payload) {
       let isFound = state.song.some((e) => {
@@ -47,6 +51,9 @@ const store = createStore({
 
       console.log(payload);
       console.log("recipe in store", state.recipe);
+    },
+    imgprv(state, payload) {
+      state.imgPreview = payload;
     },
   },
   actions: {

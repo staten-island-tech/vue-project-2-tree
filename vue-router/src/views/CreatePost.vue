@@ -1,9 +1,10 @@
 <template>
-  <div class="newRecipe">
+  <div class="songBackground">
     <form @submit.prevent="onFormSubmit">
       <div class="form-group">
         <label class="img-insert">Album Cover (link)</label>
-        <input id="file"  class="form-control" type="link" v-on:change="onFileChange" v-model="cover" required/>
+        <NewImg v-model="cover" />
+        <!-- <input id="file"  class="form-control" type="link" v-on:change="onFileChange" v-model="cover" required/> -->
         <label class="title">Name of Song</label>
         <input type="text" class="form-control" v-model="title" required>
       </div>
@@ -23,13 +24,21 @@ import { getDatabase, set, ref, push } from "firebase/database";
 // import { db } from "../firebase/config.js";
 // import { collection, addDoc } from "firebase/firestore";
 import { useRouter } from "vue-router";
+import { useStore } from "vuex";
+import NewImg from "../components/NewImg.vue";
+
 export default {
+  components: {
+    NewImg,
+  },
   setup() {
     const cover = ``;
     const title = ``;
     const content = ``;
     const db = getDatabase();
     const route = useRouter();
+    const store = useStore();
+    
     
     function writeUserData() {
       if (
@@ -43,10 +52,10 @@ export default {
         set(newpostRef, {
           title: this.title,
           content: this.content,
-
+          cover: store.state.imgPreview,
         })
         
-        route.push("/blog");
+        route.push("blogs/");
       }
     }
     return {
@@ -68,7 +77,7 @@ export default {
 </script>
 
 <style scoped>
-.newRecipe {
+.songBackground {
   background-color: #232b2b;
   width: 40%;
   margin: auto;
