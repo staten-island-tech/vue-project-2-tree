@@ -19,6 +19,7 @@ export default {
         image:String,
         NewPage:String,
         id:String,
+        text:String,
     },
   setup() {
     const store = useStore();

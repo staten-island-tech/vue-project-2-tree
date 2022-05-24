@@ -1,19 +1,7 @@
 <template>
   <div class="home">
     <Card/>
-<!--   <div v-for="blog in blogs" :key="blog.id">
-      <div class="blog">
-        <h3>{{ blog.title }}</h3>
-        <p>{{ blog.content }}</p>
-        <div class="icons">
-          <span>upvote or downvote this article: </span>
-          <span class="material-icons">thumb_up</span>
-          <span class="material-icons">thumb_down</span>
-        </div>
-      </div>
-    </div> -->
-
-  </div>
+</div>
 </template>
 
 <script>
