@@ -93,8 +93,6 @@ const store = createStore({
       context.commit("setUser", null);
     },
     async getRecipe(context, data) {
-      // console.log("got recipe");
-
       context.commit("recipeRef", data);
     },
   },
