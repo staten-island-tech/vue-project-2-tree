@@ -14,6 +14,7 @@ const store = createStore({
     user: null,
     song: [],
     imgPreview: null,
+    redirectSong: null,
   },
   mutations: {
     setUser(state, payload) {
@@ -54,6 +55,9 @@ const store = createStore({
     },
     imgprv(state, payload) {
       state.imgPreview = payload;
+    },
+    redirect(state, payload) {
+      state.redirectSong = payload;
     },
   },
   actions: {

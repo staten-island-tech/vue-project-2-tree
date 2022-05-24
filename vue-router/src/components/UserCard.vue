@@ -1,9 +1,9 @@
 <template>
-  <button class="card" @click="goTo({ id })">
-    <h2 class="recipe-name">{{ title }}</h2>
+  <button class="card" @click="reDirect({ NewPage })">
+    <h2 class="song-name">{{ title }}</h2>
 
-    <img class="recipe-img" :src="img" alt="" />
-    <p class="description">{{ text }}</p>
+    <img class="song-img" :src="image" alt="" />
+    
     <!-- <p class="ingredient">{{ item }}</p>
     <p class="instruction">{{ text }}</p> -->
   </button>
@@ -17,21 +17,23 @@ export default {
     props: {
         title:String,
         image:String,
+        NewPage:String,
+        id:String,
     },
-    setup() {
+  setup() {
     const store = useStore();
     const db = getDatabase();
     const router = useRouter();
-    function goTo(id) {
-      let idRef = id.id;
-      const blog = ref(db, "recipe/" + idRef);
-      onValue(blog, (snapshot) => {
+    function reDirect(NewPage) {
+      let newref = NewPage.id
+      const newblog = ref(db, "blogs/" + newref)
+      onValue(newblog, (snapshot) => {
         const data = snapshot.val();
-        store.commit("view", data);
+        store.commit("redirect", data)
       });
-      router.push("/BlogPost");
+        router.push("/BlogPost");  
     }
-    return { goTo };
+    return { reDirect };
   },
 };
 </script>
@@ -40,18 +42,18 @@ export default {
   box-sizing: border-box;
   display: flex;
   flex-flow: column nowrap;
-  background-color: gray;
+  background-color: #1db954;
   width: 18%;
   height: 32rem;
   border-radius: 2rem;
   margin: 0.9%;
   overflow: hidden;
 }
-.recipe-name {
+.song-name {
   font-size: 5rem;
   margin: 0 auto;
 }
-.recipe-img {
+.song-img {
   width: 80%;
   height: auto;
   margin: 0 auto;
