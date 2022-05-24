@@ -46,10 +46,10 @@ export default {
         title !== null &&
         content !== null 
        ) {
-        const postlistRef = ref(db, "blogs/");
-        const newpostRef = push(postlistRef);
+        const list = ref(db, "blogs/");
+        const pushList = push(list);
 
-        set(newpostRef, {
+        set(pushList, {
           title: this.title,
           content: this.content,
           cover: store.state.imgPreview,

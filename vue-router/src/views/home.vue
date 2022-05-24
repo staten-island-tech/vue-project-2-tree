@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <Card/>
+    <Card
+
+   />
 </div>
 </template>
 
@@ -9,8 +11,8 @@
 /* eslint-disable */
 import { getDatabase, ref, onValue } from "firebase/database"
 import { useStore } from 'vuex'
-import { collection, getDocs } from "firebase/firestore";
-import bColRef from "../firebase/config.js";
+// import { collection, getDocs } from "firebase/firestore";
+// import bColRef from "../firebase/config.js";
 import Card from "../components/UserCard.vue";
 import {onMounted, computed} from "vue"
 
@@ -25,7 +27,7 @@ export default {
     const store = useStore();
     let list = [];
     onMounted(() => {
-      /* store.commit("clear"); */
+      store.commit("erase"); 
       onValue(blogRef, (snapshot) => {
         snapshot.forEach(function (childSnapshot) {
           const childData = childSnapshot.exportVal();
@@ -37,7 +39,7 @@ export default {
       });
     });
     console.log(list);
-    return { song: computed(() => store.state.song), Card, list };
+    return { blogs: computed(() => store.state.blogs), Card, list };
   },
 /*   data() {
     return {

@@ -15,11 +15,17 @@ const store = createStore({
     song: [],
     imgPreview: null,
     redirectSong: null,
+    title: [],
+    content: [],
   },
   mutations: {
     setUser(state, payload) {
       state.user = payload;
       console.log("user state changed:", state.user);
+    },
+    erase(state) {
+      state.title = [];
+      state.content = [];
     },
     setAuthIsReady(state, payload) {
       state.authIsReady = payload;
@@ -51,7 +57,7 @@ const store = createStore({
       }
 
       console.log(payload);
-      console.log("recipe in store", state.recipe);
+      // console.log("recipe in store", state.recipe);
     },
     imgprv(state, payload) {
       state.imgPreview = payload;
@@ -87,7 +93,7 @@ const store = createStore({
       context.commit("setUser", null);
     },
     async getRecipe(context, data) {
-      console.log("got recipe");
+      // console.log("got recipe");
 
       context.commit("recipeRef", data);
     },
