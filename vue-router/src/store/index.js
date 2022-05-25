@@ -18,6 +18,7 @@ const store = createStore({
     title: [],
     content: [],
     writeSong: [],
+    viewSong: [],
   },
   mutations: {
     setUser(state, payload) {
@@ -49,6 +50,9 @@ const store = createStore({
     },
     redirect(state, payload) {
       state.redirectSong = payload;
+    },
+    view(state, payload) {
+      state.viewSong = payload;
     },
     write(state, payload) {
       state.writeSong = payload;
@@ -89,9 +93,9 @@ const store = createStore({
       await signOut(auth);
       context.commit("setUser", null);
     },
-    async getRecipe(context, data) {
+    async getSong(context, data) {
       context.commit("recipeRef", data);
-      console.log("got recipe");
+      // console.log("got recipe");
     },
   },
 });

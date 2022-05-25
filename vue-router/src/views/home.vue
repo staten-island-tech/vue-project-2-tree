@@ -5,7 +5,8 @@
     :key="blog.id"
     :title="blog.title"
     :image="blog.cover"
-    :text="blog.content"/>
+    :text="blog.content"
+    :author="blog.author"/>
 </div>
 </template>
 
@@ -33,7 +34,7 @@ export default {
       onValue(blogRef, (snapshot) => {
         snapshot.forEach(function (childSnapshot) {
           const childData = childSnapshot.exportVal();
-          store.dispatch("getRecipe", childData);
+          store.dispatch("getSong", childData);
         });
       });
     });

@@ -1,23 +1,30 @@
 <template>
-    <div class= "background-test">
-
-    </div>
+<html lang="en">
+   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+    <BlogCard
+    :title="blog.title"
+    :img="blog.image"
+    :author="blog.author"
+    :text="blog.text"
+    >
+    </BlogCard>
+  </html>
 </template>
 
 <script>
+import BlogCard from "../components/BlogScreen.vue";
+import { computed } from "vue";
+import { useStore } from "vuex";
 export default {
-    setup () {
-        
-
-        return {}
-    }
-}
+  components: {
+    BlogCard,
+  },
+  setup() {
+    const store = useStore();
+    return { blog: computed(() => store.state.viewSong), BlogCard };
+  },
+};
 </script>
 
-<style scoped>
-.background-test {
-    background-color:#1db954; 
-    width: 50%;
-    height: 20rem;
-}
-</style>
