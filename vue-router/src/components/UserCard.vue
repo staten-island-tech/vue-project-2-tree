@@ -4,8 +4,7 @@
 
     <img class="song-img" :src="image" alt="" />
     
-    <!-- <p class="ingredient">{{ item }}</p>
-    <p class="instruction">{{ text }}</p> -->
+ 
   </button>
 </template>
 
