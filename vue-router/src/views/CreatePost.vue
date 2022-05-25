@@ -23,6 +23,7 @@
 import { getDatabase, set, ref, push } from "firebase/database";
 // import { db } from "../firebase/config.js";
 // import { collection, addDoc } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 import NewImg from "../components/NewImg.vue";
@@ -32,6 +33,7 @@ export default {
     NewImg,
   },
   setup() {
+    const auth = getAuth();
     const cover = ``;
     const title = ``;
     const content = ``;
@@ -50,9 +52,11 @@ export default {
         const pushList = push(list);
 
         set(pushList, {
+          author: auth.currentUser.email,
           title: this.title,
           content: this.content,
           cover: store.state.imgPreview,
+          id: pushList.key,
         })
         
         route.push("blogs/");

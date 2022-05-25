@@ -17,6 +17,7 @@ const store = createStore({
     redirectSong: null,
     title: [],
     content: [],
+    writeSong: [],
   },
   mutations: {
     setUser(state, payload) {
@@ -24,46 +25,42 @@ const store = createStore({
       console.log("user state changed:", state.user);
     },
     erase(state) {
-      state.title = [];
-      state.content = [];
+      state.song = [];
+      state.writeSong = [];
     },
     setAuthIsReady(state, payload) {
       state.authIsReady = payload;
     },
     recipeRef(state, payload) {
       let isFound = state.song.some((e) => {
-        if (
-          e.id === payload.id /* &&
-          e.instructionsRecipe === payload.instructionsRecipe &&
-          e.img === payload.img &&
-          e.ingredientsRecipe === payload.ingredientsRecipe &&
-          e.descsRecipe === payload.descsRecipe */
-        ) {
+        if (e.id === payload.id) {
           return true;
         }
       });
 
       if (isFound === false) {
         state.song.push(payload);
-        /* if (isFound.id === payload.id) {
-          let index = state.recipe.indexOf(isFound);
-          state.recipe.splice(index, 1, payload);
-          console.log("yes");
-        }
-        if (isFound.id !== payload.id) {
-          console.log("no");
-          
-        } */
       }
-
-      console.log(payload);
-      // console.log("recipe in store", state.recipe);
+      // console.log(payload);
+      console.log(state.song);
     },
     imgprv(state, payload) {
       state.imgPreview = payload;
     },
     redirect(state, payload) {
       state.redirectSong = payload;
+    },
+    write(state, payload) {
+      state.writeSong = payload;
+    },
+    titleName(state, payload) {
+      state.writeSong.title = payload;
+    },
+    descriptionName(state, payload) {
+      state.writeSong.content = payload;
+    },
+    imgName(state, payload) {
+      state.writeSong.img = payload;
     },
   },
   actions: {
@@ -94,6 +91,7 @@ const store = createStore({
     },
     async getRecipe(context, data) {
       context.commit("recipeRef", data);
+      console.log("got recipe");
     },
   },
 });

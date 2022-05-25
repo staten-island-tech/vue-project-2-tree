@@ -1,8 +1,11 @@
 <template>
   <div class="home">
-    <Card
-
-   />
+    <Card 
+    v-for="blog in blogs" 
+    :key="blog.id"
+    :title="blog.title"
+    :image="blog.cover"
+    :text="blog.content"/>
 </div>
 </template>
 
@@ -25,41 +28,18 @@ export default {
     const db = getDatabase();
     const blogRef = ref(db, "blogs/");
     const store = useStore();
-    let list = [];
     onMounted(() => {
       store.commit("erase"); 
       onValue(blogRef, (snapshot) => {
         snapshot.forEach(function (childSnapshot) {
           const childData = childSnapshot.exportVal();
-          list.push(childData);
-          console.log(childData);
-
           store.dispatch("getRecipe", childData);
         });
       });
     });
-    console.log(list);
-    return { blogs: computed(() => store.state.blogs), Card, list };
+
+    return { blogs: computed(() => store.state.song), Card };
   },
-/*   data() {
-    return {
-      blogs: [],
-    };
-  },
-  methods: {
-    async fetchBlogs() {
-      const blogs = [];
-      const blogSnapshot = await getDocs(bColRef);
-      blogSnapshot.forEach((blog) => {
-        const blogData = blog.data();
-        blogs.push(blogData);
-      });
-      this.blogs = blogs;
-    }
-  },
-  created() {
-    this.fetchBlogs();
-  }
-} */
+
 }
 </script>

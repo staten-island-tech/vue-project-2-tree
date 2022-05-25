@@ -1,5 +1,10 @@
 <template>
-<div class= "LogUp">
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+      <div class= "LogUp">
   <div class= "rectangle-1">
         <form @submit.prevent="handleSubmit">
     <div class ="SignIn">Login</div>
@@ -15,9 +20,10 @@
     <div v-if="error">{{ error }}</div>
   </form>
   </div>
-
 </div>
+  </body>
 
+</html>
 </template>
 
 <script>
