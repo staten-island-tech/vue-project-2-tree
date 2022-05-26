@@ -1,11 +1,15 @@
 <template>
 
     <button class="card" @click="reDirect({ NewPage })">
-    <h2 class="song-name">{{ title }}</h2>
+    <h1 class="song-name">{{ title }}</h1>
 
     <img class="song-img" :src="image" alt="" />
-    <button class="edit-button1">Edit</button>
-    <button class="edit-button2">Delete</button>
+    <h2 class="author-name">Written by: {{ author }}</h2>
+ 
+      <button class="edit-button1">Edit</button>
+      <button class="edit-button2">Delete</button>
+   
+
  
   </button>
 
@@ -22,6 +26,7 @@ export default {
         NewPage:String,
         id:String,
         text:String,
+        author:String,
     },
   setup() {
     const store = useStore();
@@ -50,7 +55,7 @@ export default {
   flex-flow: column nowrap;
   background-color: #1db954;
   width: 30%;
-  height: 50rem;
+  height: 55rem;
   border-radius: 2rem;
   margin: 1.5rem;
   overflow: hidden;
@@ -58,7 +63,7 @@ export default {
 }
 .song-name {
   font-size: 5rem;
-  margin: 0 auto;
+  margin: 0.5rem auto;
   font-family: "Sora", sans-serif;
 }
 .song-img {
@@ -78,11 +83,19 @@ export default {
   font-family: "Sora", sans-serif;
   font-size: 2rem;
   margin: 2rem;
+  display: inline-block;
 }
 .edit-button2 {
   width: 25%;
   height: 15%;
   font-family: "Sora", sans-serif;
   font-size: 2rem;
+  display: inline-block;
+}
+.author-name {
+  font-family: "Sora", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-top: 1rem;
 }
 </style>
