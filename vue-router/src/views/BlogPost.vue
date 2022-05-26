@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
     <BlogCard
+    v-for="blog in blogs"
+    :key="blog"
     :title="blog.title"
     :img="blog.image"
     :author="blog.author"
@@ -23,7 +25,7 @@ export default {
   },
   setup() {
     const store = useStore();
-    return { blog: computed(() => store.state.viewSong), BlogCard };
+    return { blogs: computed(() => store.state.song), BlogCard };
   },
 };
 </script>
