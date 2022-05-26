@@ -1,11 +1,14 @@
 <template>
-  <button class="card" @click="reDirect({ NewPage })">
+
+    <button class="card" @click="reDirect({ NewPage })">
     <h2 class="song-name">{{ title }}</h2>
 
     <img class="song-img" :src="image" alt="" />
-    
+    <button class="edit-button1">Edit</button>
+    <button class="edit-button2">Delete</button>
  
   </button>
+
 </template>
 
 <script>
@@ -37,29 +40,49 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style>
+
 .card {
   box-sizing: border-box;
+  text-align: center;
   display: flex;
+  align-items: center;
   flex-flow: column nowrap;
   background-color: #1db954;
-  width: 18%;
-  height: 32rem;
+  width: 30%;
+  height: 50rem;
   border-radius: 2rem;
-  margin: 0.9%;
+  margin: 1.5rem;
   overflow: hidden;
+  align-content: center;
 }
 .song-name {
   font-size: 5rem;
   margin: 0 auto;
+  font-family: "Sora", sans-serif;
 }
 .song-img {
   width: 80%;
-  height: auto;
+  height: 50%;
   margin: 0 auto;
+  object-fit: contain;
 }
 .description {
   margin: 0 auto;
+  font-size: 2rem;
+}
+.edit-button1 {
+  position: relative;
+  width: 25%;
+  height: 15%;
+  font-family: "Sora", sans-serif;
+  font-size: 2rem;
+  margin: 2rem;
+}
+.edit-button2 {
+  width: 25%;
+  height: 15%;
+  font-family: "Sora", sans-serif;
   font-size: 2rem;
 }
 </style>

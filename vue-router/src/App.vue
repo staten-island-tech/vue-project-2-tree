@@ -60,7 +60,9 @@ nav a {
   position: relative;
   background-color: #1db954;
   font-size: 2rem;
-  left: 156rem;
+  left: 169rem;
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
 }
 .displayName {
   position: relative;

@@ -7,9 +7,9 @@
     v-for="blog in blogs"
     :key="blog"
     :title="blog.title"
-    :img="blog.image"
+    :image="blog.cover"
     :author="blog.author"
-    :text="blog.text"
+    :text="blog.content"
     >
     </BlogCard>
   </html>

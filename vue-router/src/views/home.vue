@@ -44,3 +44,11 @@ export default {
 
 }
 </script>
+
+<style>
+.home {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+</style>
