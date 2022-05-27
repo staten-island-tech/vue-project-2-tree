@@ -50,6 +50,8 @@ export default {
 
 nav {
   padding: 30px;
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
 }
 
 nav a {

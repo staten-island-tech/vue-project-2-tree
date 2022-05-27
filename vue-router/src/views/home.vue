@@ -1,5 +1,9 @@
 <template>
   <div class="home">
+      <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <h1 v-if="user === null">Welcome Guest User! Please Sign Up/Log In to create your own blogposts.</h1>
     <Card 
     v-for="blog in blogs" 
     :key="blog.id"

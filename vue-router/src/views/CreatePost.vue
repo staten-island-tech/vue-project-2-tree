@@ -9,7 +9,7 @@
         <input type="text" class="form-control" v-model="title" required>
       </div>
       <div class="form-group">
-          <label class="song-description">Description of Song</label>
+          <label class="song-description">Description/Lyrics of Song</label>
         <input type="text" class="description-control" v-model="content" required>
       </div>
       <div class="form-group">

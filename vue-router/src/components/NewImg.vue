@@ -38,5 +38,10 @@ export default {
   font-family: "Sora", sans-serif;
   font-size: 3rem;
 }
-
+ .imagePreviewWrapper {
+ height: 10%;
+ width: 51%;
+ margin: 1rem auto;
+ object-fit: contain;
+} 
 </style>
