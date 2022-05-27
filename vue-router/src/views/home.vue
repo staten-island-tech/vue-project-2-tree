@@ -44,7 +44,9 @@ export default {
       });
     });
 
-    return { blogs: computed(() => store.state.song), Card };
+    return { blogs: computed(() => store.state.song), Card,
+    user: computed(() => store.state.user)
+    };
   },
 
 }
