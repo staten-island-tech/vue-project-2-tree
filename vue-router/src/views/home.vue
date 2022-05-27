@@ -1,9 +1,11 @@
 <template>
-  <div class="home">
+  <div class="hom">
       <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
-    <h1 v-if="user === null">Welcome Guest User! Please Sign Up/Log In to create your own blogposts.</h1>
+    <h1 class="welcome-class" v-if="user === null">Welcome Guest User! Please Sign Up/Log In to create your own blogposts.</h1>
+      <h1 class="welcome-class" v-if="user !== null">Welcome {{ user.email }}! Check out today's blogposts! </h1>
+      <div class="home">
     <Card 
     v-for="blog in blogs" 
     :key="blog.id"
@@ -12,6 +14,8 @@
     :image="blog.cover"
     :text="blog.content"
     :author="blog.author"/>
+      </div>
+
 </div>
 </template>
 
@@ -53,6 +57,13 @@ export default {
 </script>
 
 <style>
+.welcome-class {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 2rem;
+  margin: 1rem auto;
+}
 .home {
   display: flex;
   align-items: center;
