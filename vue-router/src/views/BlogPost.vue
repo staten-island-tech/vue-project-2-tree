@@ -1,18 +1,16 @@
 <template>
-<html lang="en">
-   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
+  <div>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
     <BlogCard
-    v-for="blog in blogs"
-    :key="blog"
-    :title="blog.title"
-    :image="blog.cover"
-    :author="blog.author"
-    :text="blog.content"
+      :title="blogs.title"
+      :image="blogs.cover"
+      :author="blogs.author"
+      :text="blogs.content"
     >
     </BlogCard>
-  </html>
+  </div>
 </template>
 
 <script>
@@ -25,8 +23,7 @@ export default {
   },
   setup() {
     const store = useStore();
-    return { blogs: computed(() => store.state.song), BlogCard };
+    return { blogs: computed(() => store.state.redirectSong) };
   },
 };
 </script>
-

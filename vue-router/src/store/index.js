@@ -13,8 +13,9 @@ const store = createStore({
   state: {
     user: null,
     song: [],
+    authIsReady: false,
     imgPreview: null,
-    redirectSong: null,
+    redirectSong: [],
     title: [],
     content: [],
     writeSong: [],
@@ -50,6 +51,7 @@ const store = createStore({
     },
     redirect(state, payload) {
       state.redirectSong = payload;
+      console.log(state.redirectSong);
     },
     view(state, payload) {
       state.viewSong = payload;

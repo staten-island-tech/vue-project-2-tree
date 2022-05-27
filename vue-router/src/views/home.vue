@@ -3,6 +3,7 @@
     <Card 
     v-for="blog in blogs" 
     :key="blog.id"
+    :id="blog.id"
     :title="blog.title"
     :image="blog.cover"
     :text="blog.content"
