@@ -4,7 +4,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
     <h1 class="welcome-class" v-if="user === null">Welcome Guest User! Please Sign Up/Log In to create your own blogposts.</h1>
-      <h1 class="welcome-class" v-if="user !== null">Welcome {{ user.email }}! Check out today's blogposts! </h1>
+      <h1 class="welcome-class" v-if="user !== null">Welcome, {{ user.email }}! Check out today's blogposts! </h1>
       <div class="home">
     <Card 
     v-for="blog in blogs" 

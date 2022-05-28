@@ -39,7 +39,7 @@ display: flex;
 flex-direction: column;
 }
 .title {
-    margin-top: 2rem;
+    margin-top: 0rem;
     font-size: 10rem;
     color: #ffffff;
     font-family: "Sora", sans-serif;

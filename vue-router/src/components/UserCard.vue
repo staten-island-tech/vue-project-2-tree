@@ -5,8 +5,8 @@
     <img class="song-img" :src="image" alt="" />
     <h2 class="author-name">Written by: {{ author }}</h2>
 
-    <button class="edit-button1">Edit</button>
-    <button class="edit-button2">Delete</button>
+    <button class="edit-button1" v-if="user === null">Edit</button>
+    <button class="edit-button2" v-if="user === null">Delete</button>
   </button>
 </template>
 
@@ -14,6 +14,7 @@
 import { useRouter } from "vue-router";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { useStore } from "vuex";
+import { computed } from "vue";
 export default {
   props: {
     title: String,
@@ -35,7 +36,7 @@ export default {
       });
       router.push("/BlogPost");
     }
-    return { reDirect };
+    return { reDirect,  user: computed(() => store.state.user) };
   },
 };
 </script>
