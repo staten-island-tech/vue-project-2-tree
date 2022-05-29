@@ -47,8 +47,8 @@ flex-direction: column;
 .img-display {
     margin: 1rem auto;
     object-fit: contain;
-    width: 20%;
-    height: 20%;
+    width: 30%;
+    height: 30%;
 }
 .user-display {
     margin-top: 1rem;
