@@ -1,18 +1,18 @@
 <template>
   <button class="card" @click="reDirect({ id })">
-    <h1 class="song-name">{{ title }}</h1>
+    <h1 class="song-name" id="titleinput">{{ title }}</h1>
 
-    <img class="song-img" :src="image" alt="" />
-    <h2 class="author-name">Written by: {{ author }}</h2>
+    <img class="song-img" id="coverinput" :src="image" alt="" />
+    <h2 class="author-name" id="authorinput">Written by: {{ author }}</h2>
 
-    <button class="edit-button1" v-if="user === null">Edit</button>
-    <button class="edit-button2" v-if="user === null">Delete</button>
+    <button class="edit-button1">Edit</button>
+    <button class="edit-button2" @click="removeData({ id })">Delete</button>
   </button>
 </template>
 
 <script>
 import { useRouter } from "vue-router";
-import { getDatabase, ref, onValue } from "firebase/database";
+import { getDatabase, ref, onValue, remove} from "firebase/database";
 import { useStore } from "vuex";
 import { computed } from "vue";
 export default {
@@ -27,8 +27,8 @@ export default {
     const store = useStore();
     const db = getDatabase();
     const router = useRouter();
-    function reDirect(NewPage) {
-      let newref = NewPage.id;
+    function reDirect(blogs) {
+      let newref = blogs.id;
       const newblog = ref(db, "blogs/" + newref);
       onValue(newblog, (snapshot) => {
         const data = snapshot.val();
@@ -36,7 +36,13 @@ export default {
       });
       router.push("/BlogPost");
     }
-    return { reDirect,  user: computed(() => store.state.user) };
+    function removeData(blogs) {
+       let newref = blogs.id;
+       remove(ref(db, "blogs/" + newref)); 
+       location.reload();
+       router.push("/");
+    }
+    return { reDirect,  user: computed(() => store.state.user), removeData };
   },
 };
 </script>
