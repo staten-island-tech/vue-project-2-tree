@@ -5,6 +5,7 @@ import SignupView from "../views/SignupView.vue";
 import CreateView from "../views/CreatePost.vue";
 import BlogPost from "../views/BlogPost.vue";
 import SongCard from "../views/Song.vue";
+import EditView from "../views/EditPost.vue";
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: "/Song",
     name: "Song",
     component: SongCard,
+  },
+  {
+    path: "/EditPost",
+    name: "EditPost",
+    component: EditView,
   },
   {
     path: "/about",

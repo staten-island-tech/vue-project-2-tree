@@ -84,6 +84,9 @@ const store = createStore({
     update(state, payload) {
       state.updateSong = payload;
     },
+    updateSongImg(state, payload) {
+      state.updateSong.img = payload;
+    },
   },
   actions: {
     async signup(context, { email, password }) {

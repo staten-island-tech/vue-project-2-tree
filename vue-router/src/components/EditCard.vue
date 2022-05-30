@@ -39,7 +39,7 @@ export default {
         const data = snapshot.val();
         store.commit("update", data);
       });
-      router.push("/CreatePost");
+      router.push("/EditPost");
     }
     return { removeData, editData };
   },

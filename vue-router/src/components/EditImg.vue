@@ -1,34 +1,36 @@
 <template>
-  <div>
-    <input id="file" type="text" class="img-control" v-on:change="createImg" />
+    <div>
+    <input id="file" type="text" class="img-control" v-on:change="editImg" />
     <img class="previmg" id="img" src="" alt="" />
-  </div>
+    </div>
 </template>
 
 <script>
-import { ref } from "vue";
 import { useStore } from "vuex";
-
+import { ref, onMounted } from "vue";
 export default {
-  setup() {
+    name: "EditImg",
+    setup () {
     const store = useStore();
-
-    function createImg() {
+     onMounted(() => {
+      let link = ref(store.state.updateSong.cover).value;
+      document.getElementById("file").value = link;
+      document.getElementById("img").src = link;
+    });
+    function editImg() {
       let img = ref(document.getElementById("file")).value;
       let link = img.value;
+      console.log(link);
       if (link !== null) {
         document.getElementById("img").src = link;
-        store.commit("imgprv", link);
-      } else {
-        document.getElementById("img").src = null;
-        store.commit("imgprv", null);
+        store.commit("updateSongImg", link);
       }
     }
-    return {
-      createImg,
-    };
-  },
-};
+        return {
+            editImg,
+        }
+    }
+}
 </script>
 
 <style>
