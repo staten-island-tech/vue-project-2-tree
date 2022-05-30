@@ -20,6 +20,8 @@ const store = createStore({
     content: [],
     writeSong: [],
     viewSong: [],
+    updateSong: [],
+    useerSong: [],
   },
   mutations: {
     setUser(state, payload) {
@@ -56,6 +58,17 @@ const store = createStore({
     view(state, payload) {
       state.viewSong = payload;
     },
+    userSong(state, payload) {
+      const usong = state.useerSong.some((e) => {
+        if (e.id === payload.id) {
+          return true;
+        }
+      });
+      if (usong === false) {
+        state.useerSong.push(payload);
+      }
+      console.log(state.useerSong);
+    },
     write(state, payload) {
       state.writeSong = payload;
     },
@@ -67,6 +80,9 @@ const store = createStore({
     },
     imgName(state, payload) {
       state.writeSong.img = payload;
+    },
+    update(state, payload) {
+      state.updateSong = payload;
     },
   },
   actions: {
@@ -98,6 +114,13 @@ const store = createStore({
     async getSong(context, data) {
       context.commit("recipeRef", data);
       // console.log("got recipe");
+    },
+    async songData(context, data) {
+      if (data.author === this.state.user.email) {
+        context.commit("userSong", data);
+        console.log("working");
+        console.log(data);
+      }
     },
   },
 });

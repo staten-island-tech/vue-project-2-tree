@@ -5,14 +5,13 @@
     <img class="song-img" id="coverinput" :src="image" alt="" />
     <h2 class="author-name" id="authorinput">Written by: {{ author }}</h2>
 
-    <button class="edit-button1" @click="editData({ id })">Edit</button>
-    <button class="edit-button2" @click="removeData({ id })">Delete</button>
+
   </button>
 </template>
 
 <script>
 import { useRouter } from "vue-router";
-import { getDatabase, ref, onValue, remove, update } from "firebase/database";
+import { getDatabase, ref, onValue, remove } from "firebase/database";
 import { useStore } from "vuex";
 import { computed } from "vue";
 export default {
@@ -42,10 +41,14 @@ export default {
        location.reload();
        router.push("/");
     }
-    function editData(blogs) {
-       let newref = blogs.id;
-       update(ref(db, "blogs/" + newref)); 
-       location.reload();
+    function editData(blogs) {  
+      let newref = blogs.id;
+      const newblog = ref(db, "blogs/" + newref);
+        onValue(newblog, (snapshot) => {
+        const data = snapshot.val();
+        store.commit("update", data);
+      });
+       router.push("/CreatePost");
     }
     return { reDirect,  user: computed(() => store.state.user), removeData, editData };
   },

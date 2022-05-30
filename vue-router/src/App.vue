@@ -9,6 +9,7 @@
       <p v-if="user !== null">Logged in as: {{ user.email }}</p>
     </div>
     <router-link class="createnav" v-if="user !== null" to="/CreatePost">Create Post</router-link>
+    <router-link class="editnav" v-if="user !== null" to="/Song">Edit Post</router-link>
   </nav>
   <div>
      <router-view/>

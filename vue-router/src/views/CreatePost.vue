@@ -10,7 +10,10 @@
       </div>
       <div class="form-group">
           <label class="song-description">Description/Lyrics of Song</label>
-        <input type="text" class="description-control" v-model="content" required>
+        <textarea
+        class="description-control"
+        v-model="content" required
+        ></textarea>
       </div>
       <div class="form-group">
         <button class="btn" @click="writeUserData">Add Post</button>

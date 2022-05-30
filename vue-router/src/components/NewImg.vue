@@ -39,7 +39,7 @@ export default {
   font-size: 3rem;
 }
  .imagePreviewWrapper {
- height: 10%;
+ height: 5%;
  width: 51%;
  margin: 1rem auto;
  object-fit: contain;
