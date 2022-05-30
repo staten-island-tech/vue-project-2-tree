@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
     <UserCard
       v-for="blog in blogs"
       :key="blog"
@@ -42,4 +42,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style>
+.home {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+</style>

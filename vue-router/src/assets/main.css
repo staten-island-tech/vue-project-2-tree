@@ -49,7 +49,7 @@ button {
   font-size: 2rem;
   color: #1db954;
   position: relative;
-  left: 156rem;
+  left: 169rem;
 }
 
 .aboutnav {
@@ -61,7 +61,7 @@ button {
   position: relative;
   font-size: 2rem;
   color: #1db954;
-  left: 158rem;
+  left: 150rem;
 }
 
 .loginnav {
@@ -75,7 +75,14 @@ button {
   position: relative;
   font-size: 2rem;
   color: #1db954;
-  left: 121rem;
+  left: 135rem;
+}
+
+.editnav {
+  position: relative;
+  font-size: 2rem;
+  color: #1db954;
+  left: 110rem;
 }
 
 /* blogs */

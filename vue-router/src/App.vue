@@ -6,7 +6,7 @@
     <router-link class="loginnav" v-if="user === null" to= "/LoginView">Login</router-link>
     <button @click="handleClick" v-if="user !== null" class="logoutbtn" >Logout</button>
     <div class="displayName">
-      <p v-if="user !== null">Logged in as: {{ user.email }}</p>
+      <!-- <p v-if="user !== null">Logged in as: {{ user.email }}</p> -->
     </div>
     <router-link class="createnav" v-if="user !== null" to="/CreatePost">Create Post</router-link>
     <router-link class="editnav" v-if="user !== null" to="/Song">Edit Post</router-link>

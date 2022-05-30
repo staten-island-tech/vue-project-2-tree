@@ -63,7 +63,7 @@ export default {
   flex-flow: column nowrap;
   background-color: #1db954;
   width: 30%;
-  height: 55rem;
+  height: 30rem;
   border-radius: 2rem;
   margin: 1.5rem;
   overflow: hidden;
