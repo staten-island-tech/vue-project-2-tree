@@ -28,7 +28,7 @@ export default {
     function removeData(blogs) {
       let newref = blogs.id;
       remove(ref(db, "blogs/" + newref));
-      location.reload();
+      router.push("/EditPost");
     }
     function editData(blogs) {
       let newref = blogs.id;
@@ -37,7 +37,7 @@ export default {
         const data = snapshot.val();
         store.commit("update", data);
       });
-      router.push("/EditPost");
+      location.reload()
     }
     return { removeData, editData };
   },
