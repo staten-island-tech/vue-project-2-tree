@@ -28,7 +28,7 @@ export default {
     function removeData(blogs) {
       let newref = blogs.id;
       remove(ref(db, "blogs/" + newref));
-      router.push("/EditPost");
+      router.push("/");
     }
     function editData(blogs) {
       let newref = blogs.id;
