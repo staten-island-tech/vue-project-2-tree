@@ -1,12 +1,10 @@
 <template>
-  <div class="card">
+  <div class="cards">
     <h1 class="song-name" id="titleinput">{{ title }}</h1>
     <img class="song-img" id="coverinput" :src="image" alt="" />
     <h2 class="author-name" id="authorinput">Written by: {{ author }}</h2>
-    <div class="btnalign">
       <button class="edit-button1" @click="editData({ id })">Edit</button>
       <button class="edit-button2" @click="removeData({ id })">Delete</button>
-    </div>
   </div>
 </template>
 
@@ -47,7 +45,7 @@ export default {
 </script>
 
 <style>
-.card {
+.cards {
   box-sizing: border-box;
   text-align: center;
   display: flex;
@@ -55,7 +53,7 @@ export default {
   flex-flow: column nowrap;
   background-color: #1db954;
   width: 30%;
-  height: 35rem;
+  height: 45rem;
   border-radius: 2rem;
   margin: 1.5rem;
   overflow: hidden;
@@ -65,7 +63,7 @@ export default {
   font-size: 5rem;
   margin: 0.5rem auto;
   font-family: "Sora", sans-serif;
-  color: #ffffff;
+  color: #232b2b;
 }
 .song-img {
   width: 80%;
@@ -78,16 +76,20 @@ export default {
   font-size: 2rem;
   font-weight: 400;
   margin-top: 1rem;
-  color: #ffffff;
+  color: #232b2b;
 }
 .btnalign {
     align-items: center;
 }
 .edit-button1 {
-  
-  height: 15%;
   font-family: "Sora", sans-serif;
-  
-  margin: 2rem;
+  margin: 1rem;
+  background-color: #232b2b;
 }
+.edit-button2 {
+  font-family:"Sora", sans-serif;
+  margin-bottom: 1rem;
+  background-color: #232b2b;
+}
+
 </style>

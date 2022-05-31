@@ -12,16 +12,16 @@ import { useStore } from "vuex";
 export default {
   setup() {
     const store = useStore();
-
+    
     function createImg() {
-      let img = ref(document.getElementById("file")).value;
-      let link = img.value;
+      let pic = ref(document.getElementById("file")).value;
+      let link = pic.value;
       if (link !== null) {
         document.getElementById("img").src = link;
-        store.commit("imgprv", link);
+        store.commit("imgView", link);
       } else {
         document.getElementById("img").src = null;
-        store.commit("imgprv", null);
+        store.commit("imgView", null);
       }
     }
     return {

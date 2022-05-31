@@ -73,6 +73,7 @@ export default {
   font-size: 5rem;
   margin: 0.5rem auto;
   font-family: "Sora", sans-serif;
+  color: #232b2b;
 }
 .song-img {
   width: 80%;
@@ -105,5 +106,7 @@ export default {
   font-size: 2rem;
   font-weight: 400;
   margin-top: 1rem;
+  color: #232b2b;
 }
+
 </style>

@@ -35,7 +35,7 @@ const store = createStore({
     setAuthIsReady(state, payload) {
       state.authIsReady = payload;
     },
-    recipeRef(state, payload) {
+    songRef(state, payload) {
       let isFound = state.song.some((e) => {
         if (e.id === payload.id) {
           return true;
@@ -48,7 +48,7 @@ const store = createStore({
       // console.log(payload);
       console.log(state.song);
     },
-    imgprv(state, payload) {
+    imgView(state, payload) {
       state.imgPreview = payload;
     },
     redirect(state, payload) {
@@ -108,7 +108,7 @@ const store = createStore({
       }
     },
     async login(context, { email, password }) {
-      console.log("login action");
+      // console.log("login action");
 
       const res = await signInWithEmailAndPassword(auth, email, password);
       if (res) {
@@ -118,14 +118,13 @@ const store = createStore({
       }
     },
     async logout(context) {
-      console.log("logout action");
+      // console.log("logout action");
 
       await signOut(auth);
       context.commit("setUser", null);
     },
     async getSong(context, data) {
-      context.commit("recipeRef", data);
-      // console.log("got recipe");
+      context.commit("songRef", data);
     },
     async songData(context, data) {
       if (data.author === this.state.user.email) {

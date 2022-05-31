@@ -12,8 +12,7 @@
     <input type="password" name="password" placeholder=" Password" id="password" v-model="password" required>
 
     <button class= "Signy">Sign Up</button>
-    <p class= "Already">Already have an account?</p>
-    <button class= "Loggy">Login</button>
+ 
     <div v-if="error">{{ error }}</div>
     
     
