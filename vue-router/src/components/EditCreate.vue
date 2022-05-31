@@ -6,17 +6,18 @@
         <EditImg v-model="cover"/>
         <!-- <input id="file"  class="form-control" type="link" v-on:change="onFileChange" v-model="cover" required/> -->
         <label class="title">Name of Song</label>
-        <input type="text" class="form-control" v-model="title" required>
+        <input type="text" class="form-control" v-model="title" required @change="updateTitle">
       </div>
       <div class="form-group">
           <label class="song-description">Description/Lyrics of Song</label>
         <textarea
         class="description-control"
         v-model="content" required
+        @change="updateContent"
         ></textarea>
       </div>
       <div class="form-group">
-        <button class="btn" @click="writeUserData">Edit Post</button>
+       <Button/>
       </div>
     </form>
   </div>
@@ -24,15 +25,36 @@
 
 <script>
 import EditImg from "../components/EditImg.vue"
+import Button from "../components/EditButton.vue"
+import { ref } from "vue";
+import { useStore } from "vuex";
+
 export default {
     name: "EditCreate",
     components: {
         EditImg,
+        Button,
     },
     setup () {
-        
-
-        return {}
+    const store = useStore();
+    const title = ref(store.state.updateSong.title);
+    const content = ref(store.state.updateSong.content);
+    const cover = ref(store.state.updateSong.cover);
+   
+    function updateTitle() {
+      store.commit("updateTitle", this.title)
+    }
+    function updateContent() {
+      store.commit("updateText", this.content)
+    }
+        return {
+          updateTitle,
+          updateContent,
+          title,
+          content,
+          cover,
+          Button
+        }
     }
 }
 </script>

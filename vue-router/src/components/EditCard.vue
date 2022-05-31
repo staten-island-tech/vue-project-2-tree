@@ -81,13 +81,13 @@ export default {
   color: #ffffff;
 }
 .btnalign {
-    display: inline;
+    align-items: center;
 }
 .edit-button1 {
-  width: 25%;
+  
   height: 15%;
   font-family: "Sora", sans-serif;
-  font-size: 2rem;
+  
   margin: 2rem;
 }
 </style>
