@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input id="file" type="text" class="img-control" v-on:change="createImg" />
+    <input id="album-cover-link" type="text" class="img-control" alt="song image" v-on:change="createImg" />
     <img class="previmg" id="img" src="" alt="" />
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
     const store = useStore();
     
     function createImg() {
-      let pic = ref(document.getElementById("file")).value;
+      let pic = ref(document.getElementById("album-cover-link")).value;
       let link = pic.value;
       if (link !== null) {
         document.getElementById("img").src = link;

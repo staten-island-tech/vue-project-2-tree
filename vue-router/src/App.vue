@@ -62,6 +62,7 @@ nav a {
 .logoutbtn {
   position: relative;
   background-color: #1db954;
+  color: #2c3e50;
   font-size: 2rem;
   left: 169rem;
   font-family: "Sora", sans-serif;

@@ -2,7 +2,7 @@
   <button class="card" @click="reDirect({ id })">
     <h1 class="song-name" id="titleinput">{{ title }}</h1>
 
-    <img class="song-img" id="coverinput" :src="image" alt="" />
+    <img class="song-img" id="coverinput"  :src="image" alt="album-img" />
     <h2 class="author-name" id="authorinput">Written by: {{ author }}</h2>
 
 

@@ -2,16 +2,17 @@
   <div class="songBackground">
     <form @submit.prevent="onFormSubmit">
       <div class="form-group">
-        <label class="img-insert">Album Cover (link)</label>
-        <NewImg v-model="cover"/>
+        <label for="album-cover-link" class="img-insert">Album Cover (link)</label>
+        <NewImg v-model="cover" />
         <!-- <input id="file"  class="form-control" type="link" v-on:change="onFileChange" v-model="cover" required/> -->
-        <label class="title">Name of Song</label>
-        <input type="text" class="form-control" v-model="title" required>
+        <label for="song" class="title">Name of Song</label>
+        <input type="text" class="form-control" label="Name of Song" v-model="title" id="song" required>
       </div>
       <div class="form-group">
-          <label class="song-description">Description/Lyrics of Song</label>
+          <label for="description-of-song" class="song-description">Description/Lyrics of Song</label>
         <textarea
         class="description-control"
+        id="description-of-song"
         v-model="content" required
         ></textarea>
       </div>
@@ -134,6 +135,7 @@ export default {
   height: 7rem;
   font-size: 2.4rem;
   background: #1db954;
+  color: #232b2b;
   text-align: center;
   font-family: "Sora", sans-serif;
   font-weight: 700;
