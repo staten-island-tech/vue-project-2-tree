@@ -22,7 +22,9 @@ export default {
         id: store.state.updateSong.id,
         author: store.state.updateSong.author,
       });
-      router.push("/");
+    // router.push("/Song");
+     router.push("/");
+     
     }
 
     return { update };
